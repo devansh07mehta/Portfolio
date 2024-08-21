@@ -205,7 +205,7 @@ const MatterComp = ({ isChecked }) => {
     <div
       ref={containerRef}
       style={{ width: "100%", height: "100%" }}
-      className="hidden sm:flex"
+      className="flex"
     >
       <canvas ref={canvasRef} style={{ width: "100%", height: "100%" }} />
       {animationReady && (

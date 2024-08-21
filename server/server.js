@@ -8,7 +8,17 @@ const app = express();
 const cors = require("cors");
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: function (origin, callback) {
+      const allowedOrigins = [
+        process.env.FRONTEND_URL,
+        "http://localhost:5173",
+      ];
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
   })
 );
 
@@ -77,6 +87,8 @@ app.post("/api/submit", (req, res) => {
       console.log("Email sent to admin:", info.response);
     }
   });
+
+  console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
 
   res.status(200).json({ message: "Form submitted successfully!" });
 });
