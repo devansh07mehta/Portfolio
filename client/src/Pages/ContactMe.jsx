@@ -26,7 +26,7 @@ const ContactMe = () => {
     const email = formData.get("email");
     const message = formData.get("message");
 
-    fetch("http://localhost:4000/api/submit", {
+    fetch("https://portfolio-server-js.up.railway.app/api/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
