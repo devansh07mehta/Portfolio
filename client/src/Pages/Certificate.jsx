@@ -16,56 +16,56 @@ const certificates = [
     title: "AWS Certified Cloud Practitioner",
     link: "https://aws.amazon.com/verification",
     coordinates: { top: "68%", left: "27.5%", width: "40%", height: "3.5%" },
-    image: "src/assets/images/certificates/aws-cloud-practitioner.jpg", // Replace with actual image path
+    image: "/src/assets/images/certificates/aws-cloud-practitioner.jpg", // Replace with actual image path
     text: "Cleared the AWS Certified Cloud Practitioner (AWS CLF-C02) Exam and became an AWS Certified Cloud Practitioner",
   },
   {
     title: "AWS re/Start Graduate Badge",
     link: "https://www.credly.com/badges/30f2a991-4928-4125-b284-2c880544b017/public_url",
     coordinates: { top: "22%", left: "19%", width: "15.5%", height: "18%" },
-    image: "src/assets/images/certificates/AWS-Re-start.png", // Replace with actual image path
+    image: "/src/assets/images/certificates/AWS-Re-start.png", // Replace with actual image path
     text: "Earned an AWS re/Start Graduate Badge from Credly by completing AWS Cloud Training from Anudip Foundations for 3 months",
   },
   {
     title: "Google Cloud Data Engineer Professional Certificate",
     link: "https://coursera.org/verify/professional-cert/QEGCEVE2NNHG",
     coordinates: { top: "87%", left: "71.7%", width: "20%", height: "4%" },
-    image: "src/assets/images/certificates/Google Cloud Data Engineer.jpg", // Replace with actual image path
+    image: "/src/assets/images/certificates/Google Cloud Data Engineer.jpg", // Replace with actual image path
     text: "Successfully completed Google Cloud Data Engineer Professional Certificate through an online platform, Coursera",
   },
   {
     title: "Google Data Analytics Professional Certificate",
     link: "https://coursera.org/verify/professional-cert/BE4WNGM755E8",
     coordinates: { top: "87%", left: "71.7%", width: "20%", height: "4%" },
-    image: "src/assets/images/certificates/Google Data Analytics.jpg", // Replace with actual image path
+    image: "/src/assets/images/certificates/Google Data Analytics.jpg", // Replace with actual image path
     text: "Successfully completed Google Data Analytics Professional Certificate through an online platform, Coursera",
   },
   {
     title: "IBM Data Science Professional Certificate",
     link: "https://coursera.org/verify/professional-cert/2NHFZF9ZGCVK",
     coordinates: { top: "87%", left: "71.7%", width: "20%", height: "4%" },
-    image: "src/assets/images/certificates/IBM Data Science.jpg", // Replace with actual image path
+    image: "/src/assets/images/certificates/IBM Data Science.jpg", // Replace with actual image path
     text: "Successfully completed IBM Data Science Professional Certificate through an online platform, Coursera",
   },
   {
     title: "Web Developer Bootcamp Certificate",
     link: "https://ude.my/UC-b24e467c-f423-4a74-a97c-43d9343ff4e5/",
     coordinates: { top: "10%", left: "69.65%", width: "24.4%", height: "2%" },
-    image: "src/assets/images/certificates/Web Developer Bootcamp-Udemy.jpg", // Replace with actual image path
+    image: "/src/assets/images/certificates/Web Developer Bootcamp-Udemy.jpg", // Replace with actual image path
     text: "Successfully completed Web Developer Bootcamp and earned a certificate through an online platform, Udemy",
   },
   {
     title: "User Experience (UX) Design Certificate",
     link: "https://coursera.org/verify/44X8PU575G4Z",
     coordinates: { top: "82%", left: "65%", width: "23.7%", height: "2%" },
-    image: "src/assets/images/certificates/Foundations of User Experience.jpg", // Replace with actual image path
+    image: "/src/assets/images/certificates/Foundations of User Experience.jpg", // Replace with actual image path
     text: "Successfully completed Foundations of User Experience (UX) Design Course and earned a certificate through an online platform, Coursera",
   },
   {
     title: "NPTEL DBMS Certificate",
     link: "https://archive.nptel.ac.in/content/noc/NOC24/SEM1/Ecertificates/106/noc24-cs21/Course/NPTEL24CS21S55030058630063994.pdf",
     coordinates: { top: "85.5%", left: "51%", width: "5.2%", height: "6.7%" },
-    image: "src/assets/images/certificates/NPTEL.jpg", // Replace with actual image path
+    image: "/src/assets/images/certificates/NPTEL.jpg", // Replace with actual image path
     text: "Successfully completed the NPTEL DBMS Course by clearing the proctored exam and received the Elite Certificate through the Swayam online platform from IIT Kharagpur",
   },
   // Add more certificates here if needed

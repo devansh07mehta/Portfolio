@@ -12,7 +12,7 @@ const Project = () => {
   const { isChecked } = useOutletContext();
   const projects = [
     {
-      project_img: <img src="./src/assets/mockups/BOM-Mockup.png" />,
+      project_img: <img src="/src/assets/mockups/BOM-Mockup.png" />,
       title: "Bridge Of Music",
       link: "https://bridgeofmusic.in/",
       title_description: "Music Chords Library",
@@ -29,7 +29,7 @@ const Project = () => {
       ],
     },
     {
-      project_img: <img src="./src/assets/mockups/Tasky-Mockup.png" />,
+      project_img: <img src="/src/assets/mockups/Tasky-Mockup.png" />,
       title: "Tasky Application",
       link: "https://devansh07mehta.github.io/Tasky-appln/",
       title_description: "Task Management Application",
@@ -38,7 +38,7 @@ const Project = () => {
       tags: ["#html", "#css", "#bootstrap", "#javaScript"],
     },
     {
-      project_img: <img src="./src/assets/mockups/Book-My-Show.png" />,
+      project_img: <img src="/src/assets/mockups/Book-My-Show.png" />,
       title: "Book My Show Application",
       link: "https://devansh07mehta.github.io/book-my-show/",
       title_description: "Movie Booking Application",
