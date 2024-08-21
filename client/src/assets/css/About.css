@@ -1,0 +1,140 @@
+@media (min-width:410px) and (max-width: 420px) {
+  .custom-css {
+    padding-bottom: 5vh;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .custom-overflow {
+    overflow-y: scroll;
+    pointer-events: auto;
+    top: 10vh;
+    bottom: 0;
+    /* Ensure the container stretches to the bottom */
+    position: absolute;
+    padding-top: 20vh;
+  }
+
+  .custom-css {
+    padding-bottom: 25vh;
+  }
+
+}
+
+@media (max-width: 390px) {
+  .custom-overflow {
+    overflow-y: scroll;
+    pointer-events: auto;
+    top: 12vh;
+    bottom: 0;
+
+    position: absolute;
+    padding-top: 45vh;
+  }
+
+  .custom-css {
+    padding-bottom: 30vh;
+  }
+}
+
+@media (max-width: 380px) {
+  .custom-overflow {
+    overflow-y: scroll;
+    pointer-events: auto;
+    top: 12vh;
+    bottom: 0;
+    /* Ensure the container stretches to the bottom */
+    position: absolute;
+    padding-top: 30vh;
+  }
+}
+
+@media (min-width: 389px) and (max-width: 395px) {
+  .custom-overflow {
+    overflow-y: scroll;
+    pointer-events: auto;
+    top: 11vh;
+    padding-top: 18vh;
+    bottom: 0;
+
+  }
+}
+
+@media (max-width: 322px) {
+  .custom-overflow {
+    overflow-y: scroll;
+    pointer-events: auto;
+    top: 20vh;
+    padding-top: 99vh;
+    bottom: 0;
+  }
+
+  .custom-css {
+    padding-bottom: 37vh;
+    margin-bottom: 20vh;
+  }
+
+}
+
+
+@media (min-width: 340px) and (max-width: 350px) {
+  .custom-overflow {
+    overflow-y: scroll;
+    pointer-events: auto;
+    top: 12vh;
+    bottom: 0;
+    /* Ensure the container stretches to the bottom */
+    position: absolute;
+    padding-top: 20vh;
+  }
+
+  .custom-css {
+    padding-bottom: 25vh;
+  }
+}
+
+.scrollable-container {
+  overflow-y: auto;
+  scrollbar-width: none;
+  scrollbar-color: rgba(155, 155, 155, 0.7) transparent;
+
+}
+
+@media (min-width: 100.01%) {
+  .scrollable-container {
+    overflow-y: scroll;
+    pointer-events: auto;
+    scrollbar-width: none;
+    scrollbar-color: rgba(155, 155, 155, 0.7) transparent;
+  }
+}
+
+.scrollable-container.zoomed {
+  overflow-y: scroll;
+  pointer-events: auto;
+  scrollbar-width: none;
+  scrollbar-color: rgba(155, 155, 155, 0.7) transparent;
+  height: 100%;
+  top: 15vh;
+}
+
+.scrollable-container.zoomed::-webkit-scrollbar {
+  width: 2px;
+}
+
+.scrollable-container.zoomed::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollable-container.zoomed::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.7);
+  border-radius: 20px;
+  border: transparent;
+}
+
+.scroll-padding {
+  position: absolute;
+  /* top: 100px; */
+  /* bottom: 100px; */
+}

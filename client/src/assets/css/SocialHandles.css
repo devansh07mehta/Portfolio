@@ -1,0 +1,19 @@
+@media (max-width: 365px) {
+  .social-handles-custom {
+    top: 50.5vh;
+  }
+}
+
+@media (max-width: 325px) {
+  .social-handles-custom {
+    top: 50vh;
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 767px) {
+  .social-handles-custom {
+    top: 59vh;
+    transform: translateY(-4rem);
+  }
+}

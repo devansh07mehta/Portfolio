@@ -1,0 +1,11 @@
+@media (max-width: 350px) {
+  .name-custom {
+    @apply text-center;
+  }
+}
+
+@media (max-width: 325px) {
+  .name-responsive {
+    @apply text-3xl;
+  }
+}

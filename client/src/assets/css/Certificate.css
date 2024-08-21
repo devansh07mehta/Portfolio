@@ -1,0 +1,84 @@
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+/* Black dot styles */
+.dot-black button:before {
+  content: "";
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  opacity: 0.25;
+  transition: opacity 0.3s;
+}
+
+.dot-black.slick-active button:before {
+  opacity: 0.75;
+}
+
+.dot-black button:hover:before,
+.dot-black button:focus:before {
+  opacity: 1;
+}
+
+/* White dot styles */
+.dot-white button:before {
+  content: "";
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.25;
+  transition: opacity 0.3s;
+}
+
+.dot-white.slick-active button:before {
+  opacity: 0.75;
+}
+
+.dot-white button:hover:before,
+.dot-white button:focus:before {
+  opacity: 1;
+}
