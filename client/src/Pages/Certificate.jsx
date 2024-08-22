@@ -188,6 +188,11 @@ const Certificate = () => {
   const sliderRef = useRef(null); // Ref to control the slider instance
 
   useEffect(() => {
+    certificates.forEach((certificate) => {
+      const img = new Image();
+      img.src = certificate.image;
+    });
+
     setScale("xs:scale-110");
     const timer = setTimeout(() => {
       setScale("xs:scale-100");

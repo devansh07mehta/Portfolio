@@ -54,6 +54,11 @@ const Project = () => {
       setScale("xs:scale-100");
     }, 3000);
 
+    projects.forEach((project) => {
+      const img = new Image();
+      img.src = project.project_img;
+    });
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
