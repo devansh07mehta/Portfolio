@@ -4,6 +4,9 @@ export default {
 
   theme: {
     extend: {
+      minHeight: {
+        "screen-dynamic": "calc(var(--vh) * 100)",
+      },
       colors: {
         "dot-light": "#000",
         "dot-dark": "#fff",

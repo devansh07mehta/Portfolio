@@ -23,7 +23,7 @@ const Header = ({
       <header
         className={`${
           isChecked ? "text-white" : "text-[#111]"
-        } z-[1000] h-[75px] sm:h-[9.2vh] fixed ${bgClass} px-4 lg:pl-[3rem] xl:pl-[5rem] py-8 top-0 w-full`}
+        } z-[1000] h-[70px] sm:h-[9.2vh] fixed ${bgClass} px-4 lg:pl-[3rem] xl:pl-[5rem] py-6 xs:py-8 top-0 w-full`}
       >
         <div className="flex justify-between">
           <svg

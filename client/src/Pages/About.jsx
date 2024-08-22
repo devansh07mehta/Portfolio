@@ -214,12 +214,9 @@ const About = () => {
   return (
     <>
       <div
-        ref={containerRef}
-        className={` flex xs:justify-center xs:items-center mt-0  lg:items-center lg:justify-center min-h-screen w-full px-7 sm:px-6 lg:px-8 py-12 absolute top-0 ${scale} transition-transform duration-2000 ease-in-out custom-overflow scrollable-container ${
-          isScrolling ? "scroll-padding" : ""
-        } `}
+        className={`relative inset-0 h-screen mt-20 flex flex-wrap overflow-y-scroll xs:overflow-y-hidden xs:justify-center xs:items-center xs:mt-0  lg:items-center lg:justify-center xs:min-h-screen xs:w-full px-7 sm:px-6 lg:px-8 pt-[240px] xs:pt-0 ${scale} transition-transform duration-2000 ease-in-out custom-overflow`}
       >
-        <div className="flex flex-col justify-center xs:max-w-screen-sm sm:max-w-md md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-xl 2xl:max-w-screen-xl w-screen  xs:space-y-4 5 xl:mt-8">
+        <div className=" flex flex-col justify-center h-full  xs:max-w-screen-sm sm:max-w-md md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-xl 2xl:max-w-screen-xl w-screen xs:space-y-4 xl:mt-0">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f9004d]">
               About Me
@@ -262,7 +259,7 @@ const About = () => {
                 smartphones, tablets, and desktops.
               </p>
 
-              <div className="mt-4 sx:mt-0 flex flex-wrap justify-evenly xs:justify-center gap-5 sm:gap-6 lg:gap-12 xl:gap-14 custom-css">
+              <div className="mt-4 sx:mt-0 flex flex-wrap justify-evenly xs:justify-center gap-5 sm:gap-6 lg:gap-12 xl:gap-14 mb-52 custom-css">
                 {technologies.map((tech, index) => (
                   <Tooltip key={index} text={tech.name}>
                     <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 flex items-center justify-center bg-transparent cursor-pointer hover:scale-125 transition-transform duration-300 ease-in-out pointer-events-auto">

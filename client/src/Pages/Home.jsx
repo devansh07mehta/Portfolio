@@ -39,7 +39,7 @@ const Home = () => {
             }`}
           >
             <div
-              className={`absolute inset-2 overflow-hidden rounded-full shadow-lg`}
+              className={`absolute inset-0 overflow-hidden rounded-full shadow-lg`}
             >
               <svg
                 version="1.0"

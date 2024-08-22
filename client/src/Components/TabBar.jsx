@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const TabBar = ({ activeIndex, handleClick }) => {
   const navigate = useNavigate();
   return (
-    <div className="fixed bottom-0 w-full h-16 bg-[#1f1e1e] sm:text-2xl lg:hidden flex items-center justify-between px-6 text-slate-300">
+    <div className="fixed bottom-0 w-full h-16 bg-[#1f1e1e] sm:text-2xl lg:hidden flex items-center justify-between px-6 text-slate-300 z-[9999]">
       <button
         className={`${activeIndex === 0 ? "text-red-500" : "text-slate-300"}`}
         onClick={() => {

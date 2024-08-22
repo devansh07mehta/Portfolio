@@ -8,7 +8,7 @@ const SocialHandles = ({ isChecked }) => {
   return (
     <>
       <div
-        className={`extreme-right-side absolute right-3 md:right-6 flex flex-col gap-5 md:gap-9 text-2xl md:text-4xl ${
+        className={`extreme-right-side absolute right-3 md:right-6 flex flex-col gap-6 md:gap-9 text-2xl md:text-4xl ${
           isChecked ? "text-slate-300" : "text-slate-700"
         }  top-1/2 -translate-y-1/2`}
       >
@@ -49,7 +49,7 @@ const SocialHandles = ({ isChecked }) => {
           } cursor-pointer hover:scale-125 transition-transform duration-1000 pointer-events-auto`}
           onClick={() =>
             window.open(
-              "https://wa.me/+918369515644?text=Feel free to reach out! If you'd like to get in touch, you can contact me directly via WhatsApp",
+              "https://wa.me/+918369515644?text=Hi Devansh, I came across your portfolio and I'm impressed with your work! I'd love to connect and discuss more about your projects. Looking forward to hearing from you!",
               "_blank"
             )
           }

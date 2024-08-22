@@ -16,7 +16,7 @@ const certificates = [
     title: "AWS Certified Cloud Practitioner",
     link: "https://aws.amazon.com/verification",
     coordinates: { top: "68%", left: "27.5%", width: "40%", height: "3.5%" },
-    image: "/assets/images/certificates/aws-cloud-practitioner.jpg", // Replace with actual image path
+    image: "/assets/images/certificates/AWS-cloud-practitioner.jpg", // Replace with actual image path
     text: "Cleared the AWS Certified Cloud Practitioner (AWS CLF-C02) Exam and became an AWS Certified Cloud Practitioner",
   },
   {
@@ -78,7 +78,7 @@ const SampleNextArrow = (props) => {
 
   return (
     <div
-      className={`absolute top-1/2 -translate-y-1/2 -right-5 sm:-right-12 cursor-pointer ${
+      className={`absolute top-1/2 -translate-y-1/2 -right-4 sm:-right-12 cursor-pointer ${
         isDisabled ? "opacity-50 pointer-events-none" : ""
       }`}
       onClick={isDisabled ? null : onClick}
@@ -98,7 +98,7 @@ const SamplePrevArrow = (props) => {
 
   return (
     <div
-      className={`absolute top-1/2 -translate-y-1/2 -left-5 sm:-left-12 cursor-pointer ${
+      className={`absolute top-1/2 -translate-y-1/2 -left-4 sm:-left-12 cursor-pointer ${
         isDisabled ? "opacity-50 pointer-events-none" : ""
       }`}
       onClick={isDisabled ? null : onClick}
@@ -251,11 +251,15 @@ const Certificate = () => {
   return (
     <>
       <div
-        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-auto max-w-6xl mx-auto ${scale} transition-transform duration-2000 ease-in-out p-6 sm:p-0`}
+        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-auto max-w-6xl mx-auto ${scale} transition-transform duration-2000 ease-in-out px-6 sm:p-0`}
       >
-        <Slider ref={sliderRef} {...mainCarouselSettings}>
+        <Slider
+          ref={sliderRef}
+          {...mainCarouselSettings}
+          className="w-full px-3"
+        >
           {certificates.map((certificate, index) => (
-            <div key={index} className="px-4 h-full">
+            <div key={index} className="px-3 h-full ">
               <div
                 className="m-0 p-0 bg-white shadow-lg rounded-lg w-full text-center overflow-hidden h-full cursor-pointer"
                 onClick={() => handleImageClick(index)}
