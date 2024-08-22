@@ -214,7 +214,7 @@ const About = () => {
   return (
     <>
       <div
-        className={`relative inset-0 h-screen mt-20 flex flex-wrap overflow-y-scroll xs:overflow-y-hidden xs:justify-center xs:items-center xs:mt-0  lg:items-center lg:justify-center xs:min-h-screen xs:w-full px-7 sm:px-6 lg:px-8 pt-[240px] xs:pt-0 ${scale} transition-transform duration-2000 ease-in-out custom-overflow`}
+        className={`relative inset-0 h-screen mt-20 flex flex-wrap xs:overflow-y-hidden xs:justify-center xs:items-center xs:mt-0  lg:items-center lg:justify-center xs:min-h-screen xs:w-full px-7 sm:px-6 lg:px-8 pt-[240px] xs:pt-0 ${scale} transition-transform duration-2000 ease-in-out custom-overflow`}
       >
         <div className=" flex flex-col justify-center h-full  xs:max-w-screen-sm sm:max-w-md md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-xl 2xl:max-w-screen-xl w-screen xs:space-y-4 xl:mt-0">
           <div className="text-center">

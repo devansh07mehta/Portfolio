@@ -1,3 +1,8 @@
+.custom-overflow {
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
 .scrollable-container.zoomed {
   overflow-y: scroll;
   pointer-events: auto;
