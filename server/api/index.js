@@ -34,6 +34,7 @@ const transporter = nodemailer.createTransport({
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_PASS,
   },
+  debug: true, // Enable debug mode
 });
 
 app.use(bodyParser.json());
@@ -48,49 +49,58 @@ app.get("/api/submit", (req, res) => {
 });
 
 // API route for contact form submission
-app.post("/api/submit", (req, res) => {
-  console.log("Received request:", req.body);
-  const { name, email, message } = req.body;
+app.post("/api/submit", async (req, res) => {
+  try {
+    console.log("Received request:", req.body);
+    const { name, email, message } = req.body;
 
-  // const imagePath = path.join(__dirname, "../assets/icons/DM-icon.png"); // Adjust the path accordingly
+    // Email to user
+    const userMailOptions = {
+      from: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
+      to: email,
+      subject: "Thank you for contacting me!",
+      text: `Hi ${name},\n\nThank you for reaching out. We have received your message and will get back to you soon.\n\nYour message: ${message}`,
+    };
 
-  // Email to user
-  const userMailOptions = {
-    from: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
-    to: email,
-    subject: "Thank you for contacting me!",
-    text: `Hi ${name},\n\nThank you for reaching out. We have received your message and will get back to you soon.\n\nYour message: ${message}`,
-  };
+    // Email to you
+    const adminMailOptions = {
+      from: email,
+      to: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
+      subject: `New Contact Form Submission from ${name}`,
+      text: `You have received a new message from the contact form:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
+    };
 
-  // Email to you
-  const adminMailOptions = {
-    from: email,
-    to: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
-    subject: `New Contact Form Submission from ${name}`,
-    text: `You have received a new message from the contact form:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
-  };
+    // Send email to user
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(userMailOptions, (error, info) => {
+        if (error) {
+          console.error("Error sending email to user:", error);
+          return reject(error);
+        }
+        console.log("Email sent to user:", info.response);
+        resolve(info);
+      });
+    });
 
-  // Send email to user
-  transporter.sendMail(userMailOptions, (error, info) => {
-    if (error) {
-      console.error("Error sending email to user:", error);
-    } else {
-      console.log("Email sent to user:", info.response);
-    }
-  });
+    // Send email to admin (you)
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(adminMailOptions, (error, info) => {
+        if (error) {
+          console.error("Error sending email to admin:", error);
+          return reject(error);
+        }
+        console.log("Email sent to admin:", info.response);
+        resolve(info);
+      });
+    });
 
-  // Send email to admin (you)
-  transporter.sendMail(adminMailOptions, (error, info) => {
-    if (error) {
-      console.error("Error sending email to admin:", error);
-    } else {
-      console.log("Email sent to admin:", info.response);
-    }
-  });
+    console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
 
-  console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
-
-  res.status(200).json({ message: "Form submitted successfully!" });
+    res.status(200).json({ message: "Form submitted successfully!" });
+  } catch (error) {
+    console.error("Error in email sending process:", error);
+    res.status(500).json({ message: "Failed to send emails" });
+  }
 });
 
 // Global error handler
