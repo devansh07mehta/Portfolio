@@ -4,6 +4,7 @@ import "../assets/css/Contact.css";
 import MatterComp from "../Components/MatterComp";
 import { useEffect, useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const ContactMe = () => {
   const { isChecked } = useOutletContext();
@@ -55,6 +56,16 @@ const ContactMe = () => {
   // const emailPattern = "^[a-zA-Z0-9._\\%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
   return (
     <>
+      <Helmet>
+        <meta
+          name="keywords"
+          content="Devansh Mehta, Contact Devansh Mehta, Full-Stack Developer, Web Developer, Front-End Developer, Mumbai Developer, Collaboration with Devansh Mehta, Contact Page, Web Development Inquiries, Devansh Mehta Contact Information"
+        />
+        <meta
+          name="description"
+          content="Get in touch with Devansh Mehta, a skilled Full-Stack Developer from Mumbai, India. Reach out for collaborations, inquiries, or any web development projects. Devansh is open to discussing innovative ideas and potential opportunities."
+        />
+      </Helmet>
       <MatterComp isChecked={isChecked}></MatterComp>
       <div
         className={`${scale} transition-transform duration-2000 ease-in-out absolute inset-0 flex justify-start mx-2 sm:mx-0 sm:justify-center items-center min-h-screen bg-gradient-to-r form-container pointer-events-none xl:mt-8 2xlmt-0`}

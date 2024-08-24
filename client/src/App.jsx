@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "./Components/Header";
 import TabBar from "./Components/TabBar";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 function App() {
   const preloadImages = (images) => {
@@ -94,9 +95,9 @@ function App() {
           activeIndex={activeIndex}
           handleClick={handleClick}
         />
-
-        <Outlet context={{ isChecked, handleCheckboxChange }}></Outlet>
-
+        <HelmetProvider>
+          <Outlet context={{ isChecked, handleCheckboxChange }}></Outlet>
+        </HelmetProvider>
         <TabBar activeIndex={activeIndex} handleClick={handleClick} />
       </div>
     </>

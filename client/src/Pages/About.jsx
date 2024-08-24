@@ -16,6 +16,7 @@ import { FaGitAlt } from "react-icons/fa";
 import { useEffect, useState, useRef } from "react";
 
 import "../assets/css/About.css";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   const { isChecked } = useOutletContext();
@@ -213,6 +214,18 @@ const About = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Devansh Mehta - About Me</title>
+        <meta
+          name="keywords"
+          content="Devansh Mehta, Portfolio, About Devansh Mehta, Full-Stack Developer, Front-End Developer, Web Developer, Cloud Practitioner, DevOps Enthusiast, Devansh Mehta Technologies, Devansh Mehta About Page, Devansh Mehta Bio"
+        />
+
+        <meta
+          name="description"
+          content="Hi! I'm Devansh Mehta, a 22 year old full stack developer from Mumbai, India, specializing in creating dynamic, responsive, and engaging web applications."
+        />
+      </Helmet>
       <div
         className={`relative inset-0 h-screen mt-20 flex flex-wrap xs:overflow-y-hidden xs:justify-center xs:items-center xs:mt-0 xl:mt-8 2xl:mt-0 lg:items-center lg:justify-center xs:min-h-screen xs:w-full px-7 sm:px-6 lg:px-8 pt-[240px] xs:pt-0 ${scale} transition-transform duration-2000 ease-in-out custom-overflow`}
       >

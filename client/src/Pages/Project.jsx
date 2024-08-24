@@ -1,6 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import ToolTip_Project from "../Components/ToolTip_Project";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Project = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -68,102 +69,116 @@ const Project = () => {
   }, []);
 
   return (
-    <div className="relative w-full mt-24 lg:mt-[9.5vh] xl:mt-[8.9vh] pb-8 lg:pb-0 overflow-hidden h-full ">
-      {/* Center vertical line */}
-      <div
-        className={`hidden lg:block absolute bottom-0 left-1/2 w-[2px] transform -translate-x-1/2 h-full  ${
-          isChecked ? "bg-white" : "bg-black"
-        }`}
-        style={{ top: `calc(${scrollPosition}px)` }}
-      ></div>
+    <>
+      <Helmet>
+        <title>Devansh Mehta - Projects</title>
+        <meta
+          name="keywords"
+          content="Devansh Mehta, Portfolio, Projects, Full-Stack Developer, Front-End Developer, Web Developer, Cloud Practitioner, DevOps Enthusiast, Devansh Mehta Projects, Devansh Mehta Portfolio, Devansh Mehta Project Page, Projects by Devansh Mehta, Web Development Projects"
+        />
 
-      {projects.map((project, index) => (
+        <meta
+          name="description"
+          content="Explore the innovative and diverse projects by Devansh Mehta, showcasing expertise in web development. Discover his work on platforms like Bridge Of Music, Tasky Application, and more. Join him on his journey as a developer and be a part of the ever-evolving world of technology."
+        />
+      </Helmet>
+      <div className="relative w-full mt-24 lg:mt-[9.5vh] xl:mt-[8.9vh] pb-8 lg:pb-0 overflow-hidden h-full ">
+        {/* Center vertical line */}
         <div
-          key={project.title}
-          className={`mb-20 lg:flex lg:w-full lg:justify-between items-center relative ${scale} transition-transform duration-2000 ease-in-out ${
-            index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-          } `}
-        >
-          <div className="w-full md:w-[80%] md:mx-auto lg:mx-0 lg:w-[45%] px-6 relative">
-            <div
-              className={`w-full lg:w-[62%] lg:mx-auto mt-2 lg:mt-8 cursor-pointer relative hover:scale-105 xs:hover:scale-110 hover:z-10 transition-transform duration-300 ease-in-out`}
-              onClick={() => window.open(project.link, "_blank")}
-            >
-              <ToolTip_Project key={index} text={project.title}>
-                {project.project_img}
-              </ToolTip_Project>
-            </div>
-          </div>
+          className={`hidden lg:block absolute bottom-0 left-1/2 w-[2px] transform -translate-x-1/2 h-full  ${
+            isChecked ? "bg-white" : "bg-black"
+          }`}
+          style={{ top: `calc(${scrollPosition}px)` }}
+        ></div>
 
-          {/* Horizontal line */}
+        {projects.map((project, index) => (
           <div
-            className="hidden lg:block absolute top-1/2 left-1/2 w-[17%] h-[2px] bg-[#f9004d] opacity-50"
-            style={{
-              transform: `translateX(${index % 2 === 0 ? "-99%" : "0%"})`,
-            }}
-          ></div>
-
-          {/* Circle */}
-          <div className="hidden lg:block absolute top-1/2 left-1/2 w-4 h-4 bg-[#f9004d] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10"></div>
-
-          <div
-            className={`flex flex-col mx-auto w-[90%] lg:w-[42%] ${
-              index % 2 === 0 ? "lg:mx-12" : "lg:mx-20"
-            }`}
+            key={project.title}
+            className={`mb-20 lg:flex lg:w-full lg:justify-between items-center relative ${scale} transition-transform duration-2000 ease-in-out ${
+              index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+            } `}
           >
-            <button
-              className="mt-4 text-white bg-[#f9004d] rounded-lg p-2 left-1/2 flex items-center gap-2 px-4 mx-auto lg:hidden"
-              onClick={() => window.open(project.link, "_blank")}
-            >
-              {project.title}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="feather feather-external-link"
+            <div className="w-full md:w-[80%] md:mx-auto lg:mx-0 lg:w-[45%] px-6 relative">
+              <div
+                className={`w-full lg:w-[62%] lg:mx-auto mt-2 lg:mt-8 cursor-pointer relative hover:scale-105 xs:hover:scale-110 hover:z-10 transition-transform duration-300 ease-in-out`}
+                onClick={() => window.open(project.link, "_blank")}
               >
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-            </button>
-            <h1 className={`mt-6 text-[#f9004d] text-2xl font-bold`}>
-              {project.title}
-            </h1>
-            <p className="text-[#f9004d] mt-3 font-medium">
-              ({project.title_description})
-            </p>
-            <p
-              className={`mt-3 ${
-                isChecked ? "text-white" : "text-black"
-              } text-justify`}
+                <ToolTip_Project key={index} text={project.title}>
+                  {project.project_img}
+                </ToolTip_Project>
+              </div>
+            </div>
+
+            {/* Horizontal line */}
+            <div
+              className="hidden lg:block absolute top-1/2 left-1/2 w-[17%] h-[2px] bg-[#f9004d] opacity-50"
+              style={{
+                transform: `translateX(${index % 2 === 0 ? "-99%" : "0%"})`,
+              }}
+            ></div>
+
+            {/* Circle */}
+            <div className="hidden lg:block absolute top-1/2 left-1/2 w-4 h-4 bg-[#f9004d] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10"></div>
+
+            <div
+              className={`flex flex-col mx-auto w-[90%] lg:w-[42%] ${
+                index % 2 === 0 ? "lg:mx-12" : "lg:mx-20"
+              }`}
             >
-              {project.description}
-            </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <button
-                  key={tag}
-                  className={`p-2 rounded-xl bg-transparent border-2 ${
-                    isChecked
-                      ? "text-white border-white"
-                      : "text-black border-black"
-                  }`}
+              <button
+                className="mt-4 text-white bg-[#f9004d] rounded-lg p-2 left-1/2 flex items-center gap-2 px-4 mx-auto lg:hidden"
+                onClick={() => window.open(project.link, "_blank")}
+              >
+                {project.title}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="feather feather-external-link"
                 >
-                  {tag}
-                </button>
-              ))}
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </button>
+              <h1 className={`mt-6 text-[#f9004d] text-2xl font-bold`}>
+                {project.title}
+              </h1>
+              <p className="text-[#f9004d] mt-3 font-medium">
+                ({project.title_description})
+              </p>
+              <p
+                className={`mt-3 ${
+                  isChecked ? "text-white" : "text-black"
+                } text-justify`}
+              >
+                {project.description}
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <button
+                    key={tag}
+                    className={`p-2 rounded-xl bg-transparent border-2 ${
+                      isChecked
+                        ? "text-white border-white"
+                        : "text-black border-black"
+                    }`}
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 

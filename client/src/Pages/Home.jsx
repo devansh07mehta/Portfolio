@@ -4,6 +4,7 @@ import { useOutletContext } from "react-router-dom";
 import SocialHandles from "../Components/SocialHandles";
 import MatterComp from "../Components/MatterComp";
 import "../assets/css/Home.css";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const { isChecked } = useOutletContext();
@@ -24,6 +25,17 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Devansh Mehta - Portfolio</title>
+        <meta
+          name="keywords"
+          content="Devansh, Devansh Mehta, Portfolio, Devansh Mehta's Portfolio, Devansh Mehta Portfolio, Devansh Mehta Home Page, FullStack Developer, FrontEnd Developer, Web Developer, Cloud Practitioner, DevOps Enthusiast"
+        />
+        <meta
+          name="description"
+          content="Explore Devansh Mehta's Portfolio, a passionate full stack developer from Mumbai, India, specializing in creating dynamic, responsive, and engaging web applications."
+        />
+      </Helmet>
       <MatterComp isChecked={isChecked}></MatterComp>
       <div
         className={`${

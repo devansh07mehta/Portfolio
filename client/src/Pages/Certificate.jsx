@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../assets/css/Certificate.css";
 import { useOutletContext } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const isMobile = () => {
   return /Mobi|Android/i.test(navigator.userAgent);
@@ -255,6 +256,18 @@ const Certificate = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Devansh Mehta - Certificates</title>
+        <meta
+          name="keywords"
+          content="Devansh Mehta, Portfolio, Certificates, Achievements, Full-Stack Developer, Front-End Developer, Web Developer, Cloud Practitioner, DevOps Enthusiast, Devansh Mehta Portfolio, Devansh Mehta Certificates"
+        />
+
+        <meta
+          name="description"
+          content="Explore the certifications achieved by Devansh Mehta, showcasing expertise in full-stack development, web design, and innovative technologies. View a comprehensive list of professional achievements and credentials that highlight Devansh's commitment to excellence."
+        />
+      </Helmet>
       <div
         className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-auto max-w-6xl mx-auto ${scale} transition-transform duration-2000 ease-in-out px-6 xs:px-20 lg:px-0`}
       >
