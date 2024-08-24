@@ -57,7 +57,7 @@ const ContactMe = () => {
     <>
       <MatterComp isChecked={isChecked}></MatterComp>
       <div
-        className={`${scale} transition-transform duration-2000 ease-in-out absolute inset-0 flex justify-start mx-2 sm:mx-0 sm:justify-center items-center min-h-screen bg-gradient-to-r form-container pointer-events-none`}
+        className={`${scale} transition-transform duration-2000 ease-in-out absolute inset-0 flex justify-start mx-2 sm:mx-0 sm:justify-center items-center min-h-screen bg-gradient-to-r form-container pointer-events-none xl:mt-8 2xlmt-0`}
       >
         <div
           className={`w-10/12 max-w-lg p-5 sm:p-6 lg:p-8 bg-white sm:opacity-80 shadow-2xl rounded-lg transform transition-all duration-500 hover:scale-105 mx-4 sm:mx-6 max-h-[90vh] overflow-y-auto hover:opacity-100`}

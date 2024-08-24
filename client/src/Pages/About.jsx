@@ -214,7 +214,7 @@ const About = () => {
   return (
     <>
       <div
-        className={`relative inset-0 h-screen mt-20 flex flex-wrap xs:overflow-y-hidden xs:justify-center xs:items-center xs:mt-0  lg:items-center lg:justify-center xs:min-h-screen xs:w-full px-7 sm:px-6 lg:px-8 pt-[240px] xs:pt-0 ${scale} transition-transform duration-2000 ease-in-out custom-overflow`}
+        className={`relative inset-0 h-screen mt-20 flex flex-wrap xs:overflow-y-hidden xs:justify-center xs:items-center xs:mt-0 xl:mt-8 2xl:mt-0 lg:items-center lg:justify-center xs:min-h-screen xs:w-full px-7 sm:px-6 lg:px-8 pt-[240px] xs:pt-0 ${scale} transition-transform duration-2000 ease-in-out custom-overflow`}
       >
         <div className=" flex flex-col justify-center h-full  xs:max-w-screen-sm sm:max-w-md md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-xl 2xl:max-w-screen-xl w-screen xs:space-y-4 xl:mt-0">
           <div className="text-center">
@@ -228,7 +228,7 @@ const About = () => {
               isChecked ? "text-white" : "text-black"
             }  xs:space-y-8`}
           >
-            <div className="mt-4 xs:mt-0 space-y-2 xs:space-y-4 hover:scale-105 transition-transform duration-500 ease-in-out">
+            <div className="mt-4 xs:mt-0 space-y-2 xs:space-y-4 xl:mx-12 2xl:mx-0 2xl:hover:scale-105 transition-transform duration-500 ease-in-out">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#f9004d]">
                 Who Am I?
               </h2>
@@ -248,7 +248,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="mt-6 xs:mt-0 xs:space-y-4 hover:scale-105 transition-transform duration-500 ease-in-out">
+            <div className="mt-6 xs:mt-0 xs:space-y-4 2xl:hover:scale-105 transition-transform duration-500 ease-in-out xl:mx-12 2xl:mx-0">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#f9004d]">
                 Tools & Technologies I Use
               </h2>

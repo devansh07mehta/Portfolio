@@ -78,7 +78,7 @@ const SampleNextArrow = (props) => {
 
   return (
     <div
-      className={`absolute top-1/2 -translate-y-1/2 -right-4 sm:-right-12 cursor-pointer ${
+      className={`absolute top-1/2 -translate-y-1/2 -right-4 xs:-right-8 lg:-right-12 cursor-pointer ${
         isDisabled ? "opacity-50 pointer-events-none" : ""
       }`}
       onClick={isDisabled ? null : onClick}
@@ -98,7 +98,7 @@ const SamplePrevArrow = (props) => {
 
   return (
     <div
-      className={`absolute top-1/2 -translate-y-1/2 -left-4 sm:-left-12 cursor-pointer ${
+      className={`absolute top-1/2 -translate-y-1/2 -left-4 xs:-left-8 lg:-left-12 cursor-pointer ${
         isDisabled ? "opacity-50 pointer-events-none" : ""
       }`}
       onClick={isDisabled ? null : onClick}
@@ -218,7 +218,7 @@ const Certificate = () => {
   // Main carousel settings
   const mainCarouselSettings = {
     dots: true,
-    slidesToShow: window.innerWidth < 768 ? 1 : 3,
+    slidesToShow: window.innerWidth < 1024 ? 1 : 3,
     slidesToScroll: 1,
     nextArrow: (
       <SampleNextArrow
@@ -256,7 +256,7 @@ const Certificate = () => {
   return (
     <>
       <div
-        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-auto max-w-6xl mx-auto ${scale} transition-transform duration-2000 ease-in-out px-6 sm:p-0`}
+        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-auto max-w-6xl mx-auto ${scale} transition-transform duration-2000 ease-in-out px-6 xs:px-20 lg:px-0`}
       >
         <Slider
           ref={sliderRef}
@@ -269,7 +269,7 @@ const Certificate = () => {
                 className="m-0 p-0 bg-white shadow-lg rounded-lg w-full text-center overflow-hidden h-full cursor-pointer"
                 onClick={() => handleImageClick(index)}
               >
-                <div className="sm:h-64 overflow-hidden">
+                <div className="lg:h-64 overflow-hidden">
                   <img
                     src={certificate.image}
                     alt={certificate.title}

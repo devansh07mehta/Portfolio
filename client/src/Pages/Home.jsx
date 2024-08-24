@@ -28,10 +28,10 @@ const Home = () => {
       <div
         className={`${
           isChecked ? "text-white" : "text-black"
-        } px-5 xl:pl-28 xl:pr-44 xl:py-28 w-full overflow-x-hidden xl:h-auto flex flex-col justify-center pointer-events-none absolute inset-0 max-w-screen-2xl min-w-fit mx-auto`}
+        } px-5 2xl:pl-28 2xl:pr-44 2xl:py-28 w-full overflow-x-hidden xl:h-auto flex flex-col justify-center pointer-events-none absolute inset-0 max-w-screen-2xl min-w-fit mx-auto`}
       >
         <div
-          className={`home-content ${scale} transform transition-transform duration-2000 ease-in-out flex flex-col justify-center xl:flex-row xl:items-center xl:justify-between gap-5 xl:gap-0 xl:px-0`}
+          className={`home-content ${scale} transform transition-transform duration-2000 ease-in-out flex flex-col justify-center xl:flex-row xl:items-center xl:mx-24 xl:mr-32 2xl:mx-0 xl:justify-between gap-5 xl:gap-0 xl:px-0`}
         >
           <div
             className={`left-side relative w-40 h-40 sm:w-60 sm:h-60 xl:w-72 xl:h-72 rounded-full mx-auto xl:mx-4 ${
@@ -90,23 +90,23 @@ const Home = () => {
             </div>
           </div>
           <div className={`right-side text-left xl:ml-auto`}>
-            <div className="flex justify-center xl:justify-start gap-2 text-2xl sm:text-3xl xl:text-4xl">
+            <div className="flex justify-center xl:justify-start gap-2 text-2xl sm:text-3xl 2xl:text-4xl">
               <p>Hey There!</p>
               <span className="inline-block origin-[70%_70%] animate-wave">
                 👋🏻
               </span>
             </div>
             <div className="w-11/12 md:w-full flex justify-evenly xl:justify-start gap-2 pt-2 xl:pt-6 name-custom text-center xl:text-left">
-              <p className="responsive-text text-2xl sm:text-4xl xl:text-8xl whitespace-nowrap">
+              <p className="responsive-text text-2xl sm:text-4xl xl:text-6xl 2xl:text-8xl whitespace-nowrap">
                 I'm{" "}
-                <span className="text-[#f9004d] text-4xl sm:text-6xl xl:text-8xl name-responsive">
+                <span className="text-[#f9004d] text-4xl sm:text-6xl xl:text-7xl 2xl:text-8xl name-responsive">
                   Devansh Mehta
                 </span>
                 ,
               </p>
             </div>
             <div className="flex justify-center xl:justify-start gap-2 pt-2 sm:pt-4 xl:pt-6">
-              <div className="text-2xl sm:text-3xl xl:text-5xl">
+              <div className="text-2xl sm:text-3xl xl:text-4xl 2xl:text-5xl">
                 <Typewriter />
               </div>
             </div>
