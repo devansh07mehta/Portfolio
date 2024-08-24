@@ -76,14 +76,14 @@ const TabBar = ({ activeIndex, handleClick }) => {
       </button>*/}
 
       <button
-        className={`${activeIndex === 5 ? "text-red-500" : "text-slate-300"}`}
+        className={`${activeIndex === 4 ? "text-red-500" : "text-slate-300"}`}
         onClick={() => {
-          handleClick(5);
+          handleClick(4);
           navigate("/contact");
         }}
       >
         <FaPhone className="w-5 h-5 md:w-7 md:h-7 mx-auto" />
-        <p className={`${activeIndex === 5 ? "block" : "hidden"}`}>
+        <p className={`${activeIndex === 4 ? "block" : "hidden"}`}>
           Contact Me
         </p>
       </button>
