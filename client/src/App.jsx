@@ -53,17 +53,17 @@ function App() {
     // Update on window resize
     window.addEventListener("resize", setVhProperty);
 
-    const handlePageRefresh = () => {
-      navigate("/home");
-    };
+    // const handlePageRefresh = () => {
+    //   navigate("/home");
+    // };
 
-    handlePageRefresh();
+    // handlePageRefresh();
 
     window.addEventListener("load", handlePageRefresh);
 
     return () => {
       window.removeEventListener("resize", setVhProperty);
-      window.removeEventListener("load", handlePageRefresh);
+      // window.removeEventListener("load", handlePageRefresh);
     };
   }, [navigate]);
 
