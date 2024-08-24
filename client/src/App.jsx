@@ -15,6 +15,14 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const location = useLocation();
 
+  const routeToIndexMap = {
+    "/home": 0,
+    "/about": 1,
+    "/projects": 2,
+    "/certificates": 3,
+    "/contact": 4,
+  };
+
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
@@ -53,6 +61,10 @@ function App() {
     // Update on window resize
     window.addEventListener("resize", setVhProperty);
 
+    // Update activeIndex based on the current route
+    const currentIndex = routeToIndexMap[location.pathname] || 0;
+    setActiveIndex(currentIndex);
+
     // const handlePageRefresh = () => {
     //   navigate("/home");
     // };
@@ -65,7 +77,7 @@ function App() {
       window.removeEventListener("resize", setVhProperty);
       // window.removeEventListener("load", handlePageRefresh);
     };
-  }, [navigate]);
+  }, [location.pathname]);
 
   const heightClass = location.pathname === "/projects" ? "h-full" : "h-screen";
 
