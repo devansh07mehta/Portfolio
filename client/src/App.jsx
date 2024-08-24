@@ -59,7 +59,7 @@ function App() {
 
     // handlePageRefresh();
 
-    window.addEventListener("load", handlePageRefresh);
+    // window.addEventListener("load", handlePageRefresh);
 
     return () => {
       window.removeEventListener("resize", setVhProperty);
