@@ -26,16 +26,13 @@ const ContactMe = () => {
     const email = formData.get("email");
     const message = formData.get("message");
 
-    fetch(
-      "https://portfolio-d2sihn3ld-devansh07mehtas-projects.vercel.app/api/submit",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
-      }
-    )
+    fetch("https://portfolio-phi-lovat-96.vercel.app/api/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, message }),
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
