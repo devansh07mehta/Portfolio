@@ -38,10 +38,10 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <ContactMe />,
       },
-      // {
-      //   index: true, // This will match the `/` path and redirect it to `/home`
-      //   element: <Navigate to="/home" replace />,
-      // },
+      {
+        index: true, // This will match the `/` path and redirect it to `/home`
+        element: <Navigate to="/home" replace />,
+      },
     ],
   },
 ]);
