@@ -40,28 +40,27 @@ This portfolio is a reflection of my passion for web development, featuring vari
 The project is structured as follows:
 
 ```bash
-devansh-mehta-portfolio/
-├── public/
+portfolio/
+├── client/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   │   ├── css/
+│   │   │   └── icons/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   ├── .gitignore
 │   ├── index.html
-│   └── ...
-├── src/
-│   ├── components/
-│   │   ├── Header.jsx
-│   │   ├── TabBar.jsx
-│   │   ├── ...
-│   ├── pages/
-│   │   ├── Home.jsx
-│   │   ├── About.jsx
-│   │   ├── Projects.jsx
-│   │   ├── Certificates.jsx
-│   │   ├── Contact.jsx
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── .gitignore
-├── package.json
-├── ...
-└── README.md
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── README.md
+├── server/
+│   ├── api/
+│   │   ├── index.js
+│   ├── package.json
 ```
 
 ## Deployment
