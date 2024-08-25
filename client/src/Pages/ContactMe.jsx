@@ -66,6 +66,19 @@ const ContactMe = () => {
           name="description"
           content="Get in touch with Devansh Mehta, a skilled Full-Stack Developer from Mumbai, India. Reach out for collaborations, inquiries, or any web development projects. Devansh is open to discussing innovative ideas and potential opportunities."
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Devansh Mehta",
+            url: "https://devansh-mehta-portfolio.netlify.app/contact",
+            sameAs: [
+              "https://github.com/Devansh07Mehta",
+              "https://www.linkedin.com/in/devansh-mehta-8440bb1a0/",
+              "https://github.com/devansh07mehta/Portfolio",
+            ],
+          })}
+        </script>
       </Helmet>
       <MatterComp isChecked={isChecked}></MatterComp>
       <div

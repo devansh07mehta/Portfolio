@@ -81,6 +81,19 @@ const Project = () => {
           name="description"
           content="Explore the innovative and diverse projects by Devansh Mehta, showcasing expertise in web development. Discover his work on platforms like Bridge Of Music, Tasky Application, and more. Join him on his journey as a developer and be a part of the ever-evolving world of technology."
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Devansh Mehta",
+            url: "https://devansh-mehta-portfolio.netlify.app/projects",
+            sameAs: [
+              "https://github.com/Devansh07Mehta",
+              "https://www.linkedin.com/in/devansh-mehta-8440bb1a0/",
+              "https://github.com/devansh07mehta/Portfolio",
+            ],
+          })}
+        </script>
       </Helmet>
       <div className="relative w-full mt-24 lg:mt-[9.5vh] xl:mt-[8.9vh] pb-8 lg:pb-0 overflow-hidden h-full ">
         {/* Center vertical line */}

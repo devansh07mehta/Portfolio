@@ -35,6 +35,19 @@ const Home = () => {
           name="description"
           content="Explore Devansh Mehta's Portfolio, a passionate full stack developer from Mumbai, India, specializing in creating dynamic, responsive, and engaging web applications."
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Devansh Mehta",
+            url: "https://devansh-mehta-portfolio.netlify.app/home",
+            sameAs: [
+              "https://github.com/Devansh07Mehta",
+              "https://www.linkedin.com/in/devansh-mehta-8440bb1a0/",
+              "https://github.com/devansh07mehta/Portfolio",
+            ],
+          })}
+        </script>
       </Helmet>
       <MatterComp isChecked={isChecked}></MatterComp>
       <div

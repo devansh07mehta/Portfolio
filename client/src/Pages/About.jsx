@@ -216,6 +216,19 @@ const About = () => {
     <>
       <Helmet>
         <title>Devansh Mehta - About Me</title>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Devansh Mehta",
+            url: "https://devansh-mehta-portfolio.netlify.app/about",
+            sameAs: [
+              "https://github.com/Devansh07Mehta",
+              "https://www.linkedin.com/in/devansh-mehta-8440bb1a0/",
+              "https://github.com/devansh07mehta/Portfolio",
+            ],
+          })}
+        </script>
         <meta
           name="keywords"
           content="Devansh Mehta, Portfolio, About Devansh Mehta, Full-Stack Developer, Front-End Developer, Web Developer, Cloud Practitioner, DevOps Enthusiast, Devansh Mehta Technologies, Devansh Mehta About Page, Devansh Mehta Bio"

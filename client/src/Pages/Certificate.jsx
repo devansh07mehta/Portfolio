@@ -258,6 +258,19 @@ const Certificate = () => {
     <>
       <Helmet>
         <title>Devansh Mehta - Certificates</title>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Devansh Mehta",
+            url: "https://devansh-mehta-portfolio.netlify.app/certificates",
+            sameAs: [
+              "https://github.com/Devansh07Mehta",
+              "https://www.linkedin.com/in/devansh-mehta-8440bb1a0/",
+              "https://github.com/devansh07mehta/Portfolio",
+            ],
+          })}
+        </script>
         <meta
           name="keywords"
           content="Devansh Mehta, Portfolio, Certificates, Achievements, Full-Stack Developer, Front-End Developer, Web Developer, Cloud Practitioner, DevOps Enthusiast, Devansh Mehta Portfolio, Devansh Mehta Certificates"
