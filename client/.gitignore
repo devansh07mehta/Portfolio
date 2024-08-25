@@ -1,3 +1,6 @@
+package-lock.json
+netlify.toml
+
 # Logs
 logs
 *.log
@@ -22,3 +25,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Vite cache
+.vite/
+
