@@ -29,8 +29,8 @@ This portfolio is a reflection of my passion for web development, featuring vari
 
 ## Technologies Used
 
-- **Frontend:** React, React Router DOM
-- **Styling:** CSS, Custom SVG icons
+- **Frontend:** React, React Router DOM, React Slick
+- **Styling:** Tailwind, CSS, Custom SVG icons
 - **Hosting:** Netlify
 - **Image Preloading:** For optimized loading of assets
 - **Custom Viewport Handling:** To address mobile viewport height issues
