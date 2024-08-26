@@ -54,6 +54,9 @@ app.post("/api/submit", async (req, res) => {
     console.log("Received request:", req.body);
     const { name, email, message } = req.body;
 
+    // Send response immediately
+    res.status(200).json({ message: "Form submitted successfully!" });
+
     // Email to user
     const userMailOptions = {
       from: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
@@ -62,7 +65,7 @@ app.post("/api/submit", async (req, res) => {
       text: `Hi ${name},\n\nThank you for reaching out. We have received your message and will get back to you soon.\n\nYour message: ${message}`,
     };
 
-    // Email to you
+    // Email to admin (you)
     const adminMailOptions = {
       from: email,
       to: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
@@ -70,36 +73,16 @@ app.post("/api/submit", async (req, res) => {
       text: `You have received a new message from the contact form:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
 
-    // Send email to user
-    await new Promise((resolve, reject) => {
-      transporter.sendMail(userMailOptions, (error, info) => {
-        if (error) {
-          console.error("Error sending email to user:", error);
-          return reject(error);
-        }
-        console.log("Email sent to user:", info.response);
-        resolve(info);
-      });
-    });
+    // Send emails in parallel
+    await Promise.all([
+      transporter.sendMail(userMailOptions),
+      transporter.sendMail(adminMailOptions),
+    ]);
 
-    // Send email to admin (you)
-    await new Promise((resolve, reject) => {
-      transporter.sendMail(adminMailOptions, (error, info) => {
-        if (error) {
-          console.error("Error sending email to admin:", error);
-          return reject(error);
-        }
-        console.log("Email sent to admin:", info.response);
-        resolve(info);
-      });
-    });
-
-    console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
-
-    res.status(200).json({ message: "Form submitted successfully!" });
+    console.log("Emails sent successfully");
   } catch (error) {
     console.error("Error in email sending process:", error);
-    res.status(500).json({ message: "Failed to send emails" });
+    // Handle any errors here if necessary
   }
 });
 
