@@ -78,10 +78,28 @@ app.post("/api/submit", async (req, res) => {
     //   transporter.sendMail(adminMailOptions),
     // ]);
 
-    await transporter.sendMail(userMailOptions);
-    await transporter.sendMail(adminMailOptions);
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(userMailOptions, (error, info) => {
+        if (error) {
+          console.error("Error sending email to user:", error);
+          return reject(error);
+        }
+        console.log("Email sent to user:", info.response);
+        resolve(info);
+      });
+    });
 
-    console.log("Emails sent successfully");
+    // Send email to admin (you)
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(adminMailOptions, (error, info) => {
+        if (error) {
+          console.error("Error sending email to admin:", error);
+          return reject(error);
+        }
+        console.log("Email sent to admin:", info.response);
+        resolve(info);
+      });
+    });
   } catch (error) {
     console.error("Error in email sending process:", error);
   }
