@@ -63,8 +63,8 @@ app.post("/api/submit", async (req, res) => {
 
     // Email to admin (you)
     const adminMailOptions = {
-      from: email,
-      to: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
+      from: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
+      to: email,
       subject: `New Contact Form Submission from ${name}`,
       text: `You have received a new message from the contact form:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
