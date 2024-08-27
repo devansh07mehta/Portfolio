@@ -49,41 +49,41 @@ app.get("/api/submit", (req, res) => {
 });
 
 // API route for contact form submission
-app.post("/api/submit", async (req, res) => {
-  try {
-    console.log("Received request:", req.body);
-    const { name, email, message } = req.body;
+app.post("/api/submit", (req, res) => {
+  console.log("Received request:", req.body);
+  const { name, email, message } = req.body;
 
-    // Send response immediately
-    res.status(200).json({ message: "Form submitted successfully!" });
+  // Send response immediately
+  res.status(200).json({ message: "Form submitted successfully!" });
 
-    // Email to user
-    const userMailOptions = {
-      from: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
-      to: email,
-      subject: "Thank you for contacting me!",
-      text: `Hi ${name},\n\nThank you for reaching out. We have received your message and will get back to you soon.\n\nYour message: ${message}`,
-    };
+  // Perform email logic in the background
+  (async () => {
+    try {
+      const userMailOptions = {
+        from: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
+        to: email,
+        subject: "Thank you for contacting me!",
+        text: `Hi ${name},\n\nThank you for reaching out. We have received your message and will get back to you soon.\n\nYour message: ${message}`,
+      };
 
-    // Email to admin (you)
-    const adminMailOptions = {
-      from: email,
-      to: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
-      subject: `New Contact Form Submission from ${name}`,
-      text: `You have received a new message from the contact form:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
-    };
+      const adminMailOptions = {
+        from: email,
+        to: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
+        subject: `New Contact Form Submission from ${name}`,
+        text: `You have received a new message from the contact form:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      };
 
-    // Send emails in parallel
-    await Promise.all([
-      transporter.sendMail(userMailOptions),
-      transporter.sendMail(adminMailOptions),
-    ]);
+      // Send emails in parallel
+      await Promise.all([
+        transporter.sendMail(userMailOptions),
+        transporter.sendMail(adminMailOptions),
+      ]);
 
-    console.log("Emails sent successfully");
-  } catch (error) {
-    console.error("Error in email sending process:", error);
-    // Handle any errors here if necessary
-  }
+      console.log("Emails sent successfully");
+    } catch (error) {
+      console.error("Error in email sending process:", error);
+    }
+  })();
 });
 
 // Global error handler
