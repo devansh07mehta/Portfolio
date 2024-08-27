@@ -53,9 +53,6 @@ app.post("/api/submit", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    // Send response immediately
-    res.status(200).json({ message: "Form submitted successfully!" });
-
     // Email to user
     const userMailOptions = {
       from: `"${process.env.DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
@@ -73,33 +70,13 @@ app.post("/api/submit", async (req, res) => {
     };
 
     // Send emails in parallel without wrapping in new Promise
-    // await Promise.all([
-    //   transporter.sendMail(userMailOptions),
-    //   transporter.sendMail(adminMailOptions),
-    // ]);
+    await Promise.all([
+      transporter.sendMail(userMailOptions),
+      transporter.sendMail(adminMailOptions),
+    ]);
 
-    await new Promise((resolve, reject) => {
-      transporter.sendMail(userMailOptions, (error, info) => {
-        if (error) {
-          console.error("Error sending email to user:", error);
-          return reject(error);
-        }
-        console.log("Email sent to user:", info.response);
-        resolve(info);
-      });
-    });
-
-    // Send email to admin (you)
-    await new Promise((resolve, reject) => {
-      transporter.sendMail(adminMailOptions, (error, info) => {
-        if (error) {
-          console.error("Error sending email to admin:", error);
-          return reject(error);
-        }
-        console.log("Email sent to admin:", info.response);
-        resolve(info);
-      });
-    });
+    // Send response immediately
+    res.status(200).json({ message: "Form submitted successfully!" });
   } catch (error) {
     console.error("Error in email sending process:", error);
   }
