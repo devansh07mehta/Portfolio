@@ -73,10 +73,13 @@ app.post("/api/submit", async (req, res) => {
     };
 
     // Send emails in parallel without wrapping in new Promise
-    await Promise.all([
-      transporter.sendMail(userMailOptions),
-      transporter.sendMail(adminMailOptions),
-    ]);
+    // await Promise.all([
+    //   transporter.sendMail(userMailOptions),
+    //   transporter.sendMail(adminMailOptions),
+    // ]);
+
+    await transporter.sendMail(userMailOptions);
+    await transporter.sendMail(adminMailOptions);
 
     console.log("Emails sent successfully");
   } catch (error) {
